@@ -7,8 +7,10 @@ c.execute("""SELECT name FROM sqlite_master WHERE type='table' AND name='sportli
 
 #if the table doesn't exist create a new one
 try:
+    #tests to see if any tables exist
     if c.fetchone()[0] == 1:
         pass
+    #if none exist, create one
 except:
     c.execute("""CREATE TABLE sportlist (
             sportname text,
